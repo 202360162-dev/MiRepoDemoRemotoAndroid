@@ -1,6 +1,6 @@
 # 🗂️ Estructura del Repositorio
 
-A continuación se detalla el índice de directorios del proyecto, junto con los componentes y temas abordados en cada uno:
+Ejercicios hechos en el Parcial:
 
 * 📁 **Animated**: `clase 08/09/2026`[cite: 5]
 * 📁 **Calculadora_IMC**: `Tab y Stack navigation 01/09/2026`[cite: 5]
