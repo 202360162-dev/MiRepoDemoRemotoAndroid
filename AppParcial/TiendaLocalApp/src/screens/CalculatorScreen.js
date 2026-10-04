@@ -41,48 +41,55 @@ export default function CalculatorScreen() {
     }
   };
 
-  const removeFromCart = (productId) => {
-    setCart(cart.filter(item => item.id !== productId));
-  };
+const handleCompleteSale = async () => {
+  if (cart.length === 0) {
+    Alert.alert("Error", "El ticket está vacío.");
+    return;
+  }
 
-  const handleCompleteSale = async () => {
-    if (cart.length === 0) {
-      Alert.alert("Error", "El carrito está vacío."); return;
-    }
-    if (change < 0 && cash !== '') {
-      Alert.alert("Atención", "El efectivo recibido es menor al total a pagar."); return;
-    }
+  if (change < 0 && cash !== '') {
+    Alert.alert("Atención", "Falta efectivo para cubrir el total.");
+    return;
+  }
 
-    // Descontar stock del inventario local
-    try {
-      const stored = await AsyncStorage.getItem(STORAGE_KEY);
-      if (stored) {
-        let inventory = JSON.parse(stored);
-        
-        // Recorremos el carrito y restamos al inventario
-        cart.forEach(cartItem => {
-          inventory = inventory.map(invItem => {
-            if (invItem.id === cartItem.id) {
-              return { ...invItem, stock: Math.max(0, invItem.stock - cartItem.cartQty) };
-            }
-            return invItem;
-          });
+  const cambioFinal = change;
+  const efectivoIngresado = cash;
+
+  try {
+    const stored = await AsyncStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      let inventory = JSON.parse(stored);
+      cart.forEach(cartItem => {
+        inventory = inventory.map(invItem => {
+          if (invItem.id === cartItem.id) {
+            return { ...invItem, stock: Math.max(0, invItem.stock - cartItem.cartQty) };
+          }
+          return invItem;
         });
-
-        await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(inventory));
-      }
-    } catch (e) {
-      console.error(e);
+      });
+      await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(inventory));
     }
+  } catch (e) {
+    console.error(e);
+  }
 
-    Alert.alert("¡Venta Exitosa!", `Cambio a devolver: $${cash ? change.toFixed(2) : '0.00'}\nStock actualizado.`, [
-      { text: "OK", onPress: () => {
-        setCart([]);
-        setCash('');
-        setGlobalDiscount('0');
-      }}
-    ]);
-  };
+  clearCurrentSale();
+
+  Alert.alert(
+    "¡Venta Exitosa!",
+    `Cambio a devolver: $${efectivoIngresado ? cambioFinal.toFixed(2) : '0.00'}\nStock actualizado.`
+  );
+};
+
+const clearCurrentSale = () => {
+  setCart([]);
+  setCash('');
+  setGlobalDiscount('0');
+};
+
+const removeFromCart = (productId) => {
+  setCart(prevCart => prevCart.filter(item => item.id !== productId));
+};
 
   return (
     <View style={styles.container}>
