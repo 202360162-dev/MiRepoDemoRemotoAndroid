@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bbva_navy">#072146</color>
+    <color name="bbva_blue">#004481</color>
+    <color name="bbva_light">#5CB8E3</color>
+    <color name="bg_gray">#F4F4F4</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_primary">#121212</color>
+    <color name="text_secondary">#666666</color>
+</resources>
