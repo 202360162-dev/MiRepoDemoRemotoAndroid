@@ -13,17 +13,12 @@ import com.example.clonewhatsapp.auth.AutenticacionManager;
 import com.example.clonewhatsapp.utils.SessionManager;
 
 public class LoginActivity extends AppCompatActivity {
-    private EditText etEmail, etPassword;
-    private Button btnLogin;
-    private TextView tvRegistro, tvRecuperar;
-    private AutenticacionManager authManager;
-    private SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        sessionManager = new SessionManager(this);
+        SessionManager sessionManager = new SessionManager(this);
         if (sessionManager.fetchAuthToken() != null && !sessionManager.fetchAuthToken().equals("registro_exitoso_requiere_confirmacion")) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
@@ -32,12 +27,12 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
 
-        authManager = new AutenticacionManager();
-        etEmail = findViewById(R.id.etEmailLogin);
-        etPassword = findViewById(R.id.etPasswordLogin);
-        btnLogin = findViewById(R.id.btnLogin);
-        tvRegistro = findViewById(R.id.tvIrRegistro);
-        tvRecuperar = findViewById(R.id.tvRecuperarPass);
+        AutenticacionManager authManager = new AutenticacionManager();
+        EditText etEmail = findViewById(R.id.etEmailLogin);
+        EditText etPassword = findViewById(R.id.etPasswordLogin);
+        Button btnLogin = findViewById(R.id.btnLogin);
+        TextView tvRegistro = findViewById(R.id.tvIrRegistro);
+        TextView tvRecuperar = findViewById(R.id.tvRecuperarPass);
 
         btnLogin.setOnClickListener(v -> {
             String email = etEmail.getText().toString();
@@ -64,9 +59,7 @@ public class LoginActivity extends AppCompatActivity {
             });
         });
 
-        tvRegistro.setOnClickListener(v -> {
-            startActivity(new Intent(this, RegistroActivity.class));
-        });
+        tvRegistro.setOnClickListener(v -> startActivity(new Intent(this, RegistroActivity.class)));
 
         tvRecuperar.setOnClickListener(v -> {
             String email = etEmail.getText().toString();

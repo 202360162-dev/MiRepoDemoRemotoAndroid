@@ -3,6 +3,7 @@
     package="com.example.clonewhatsapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- Nuevo -->
 
     <application
         android:allowBackup="true"
@@ -12,17 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CloneWhatsApp">
 
-        <activity
-            android:name=".ui.LoginActivity"
-            android:exported="true">
+        <!-- SplashActivity ahora es la principal -->
+        <activity android:name=".ui.SplashActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.RegistroActivity" />
         <activity android:name=".MainActivity" />
-
+        <activity android:name=".ui.PerfilActivity" />
+        <activity android:name=".ui.BuscarContactosActivity" />
+        <activity android:name=".ui.ChatActivity" />
     </application>
 </manifest>

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Paleta de League of Legends -->
+    <color name="lol_bg_dark">#010A13</color>
+    <color name="lol_bg_panel">#091428</color>
+    <color name="lol_gold">#C89B3C</color>
+    <color name="lol_gold_light">#F0E6D2</color>
+    <color name="lol_cyan_hextech">#0AC8B9</color>
+    <color name="lol_text_muted">#A09B8C</color>
+    <color name="lol_button_bg">#1E2328</color>
 </resources>

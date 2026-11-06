@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/lol_bg_dark" android:padding="24dp" android:gravity="center_horizontal">
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="CONFIGURACIÓN HEX" android:textSize="22sp" android:textStyle="bold"
+        android:textColor="@color/lol_gold" android:layout_marginBottom="32dp" android:letterSpacing="0.1"/>
+
+    <!-- Contenedor circular con borde dorado -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="140dp" android:layout_height="140dp"
+        app:cardCornerRadius="70dp" app:cardBackgroundColor="@color/lol_bg_panel"
+        app:cardElevation="8dp" android:layout_marginBottom="32dp">
+        <ImageView android:id="@+id/ivMiFoto" android:layout_width="match_parent" android:layout_height="match_parent"
+            android:scaleType="centerCrop" android:src="@android:drawable/ic_menu_camera"/>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        app:boxStrokeColor="@color/lol_gold" app:hintTextColor="@color/lol_gold" android:textColorHint="@color/lol_text_muted"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNombrePerfil" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Nombre de Invocador" android:textColor="@color/lol_gold_light" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp"
+        app:boxStrokeColor="@color/lol_gold" app:hintTextColor="@color/lol_gold" android:textColorHint="@color/lol_text_muted"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etFotoUrl" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="URL de tu Avatar" android:textColor="@color/lol_gold_light" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button android:id="@+id/btnGuardarPerfil" android:layout_width="match_parent" android:layout_height="60dp"
+        android:text="FORJAR PERFIL" android:textColor="@color/lol_gold_light" android:background="@drawable/bg_lol_button"
+        android:layout_marginTop="40dp" android:textStyle="bold" android:letterSpacing="0.1"/>
+</LinearLayout>

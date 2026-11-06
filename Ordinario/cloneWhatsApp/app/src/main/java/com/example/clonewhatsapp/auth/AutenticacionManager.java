@@ -100,7 +100,14 @@ public class AutenticacionManager {
                             callback.onError("Error parseando respuesta");
                         }
                     } else {
-                        callback.onError("Credenciales incorrectas o error en el servidor");
+                        // AQUÍ REVELAMOS EL ERROR EXACTO DE SUPABASE
+                        try {
+                            JSONObject errorJson = new JSONObject(responseData);
+                            String errorMsg = errorJson.optString("error_description", errorJson.optString("msg", "Error desconocido"));
+                            callback.onError("Error Supabase: " + errorMsg);
+                        } catch (Exception ex) {
+                            callback.onError("Error HTTP " + response.code() + ": " + responseData);
+                        }
                     }
                 });
             }

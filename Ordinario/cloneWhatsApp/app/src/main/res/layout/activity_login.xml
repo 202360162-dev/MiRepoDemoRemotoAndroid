@@ -1,54 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="32dp"
-    android:gravity="center">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="32dp" android:gravity="center"
+    android:background="@color/lol_bg_dark">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Iniciar Sesión"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="32dp"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="INICIAR SESIÓN" android:textSize="28sp" android:textStyle="bold"
+        android:textColor="@color/lol_gold" android:layout_marginBottom="32dp"/>
 
-    <EditText
-        android:id="@+id/etEmailLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Correo electrónico"
-        android:inputType="textEmailAddress" />
+    <EditText android:id="@+id/etEmailLogin" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Correo electrónico" android:textColorHint="@color/lol_text_muted"
+        android:textColor="@color/lol_gold_light" android:backgroundTint="@color/lol_gold" />
 
-    <EditText
-        android:id="@+id/etPasswordLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:layout_marginTop="16dp"/>
+    <EditText android:id="@+id/etPasswordLogin" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Contraseña" android:inputType="textPassword" android:layout_marginTop="16dp"
+        android:textColorHint="@color/lol_text_muted" android:textColor="@color/lol_gold_light" android:backgroundTint="@color/lol_gold" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Entrar"
+    <Button android:id="@+id/btnLogin" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="ENTRAR" android:textColor="@color/lol_gold_light" android:background="@drawable/bg_lol_button"
         android:layout_marginTop="32dp"/>
 
-    <TextView
-        android:id="@+id/tvRecuperarPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¿Olvidaste tu contraseña?"
-        android:textColor="#0000FF"
+    <!-- Este es el botón que faltaba -->
+    <TextView android:id="@+id/tvRecuperarPass" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="¿OLVIDASTE TU CONTRASEÑA?" android:textColor="@color/lol_text_muted"
         android:layout_marginTop="16dp"/>
 
-    <TextView
-        android:id="@+id/tvIrRegistro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Crear una cuenta nueva"
-        android:textColor="#0000FF"
-        android:layout_marginTop="16dp"/>
+    <TextView android:id="@+id/tvIrRegistro" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="CREAR UNA CUENTA NUEVA" android:textColor="@color/lol_cyan_hextech"
+        android:textStyle="bold" android:layout_marginTop="24dp"/>
 </LinearLayout>
