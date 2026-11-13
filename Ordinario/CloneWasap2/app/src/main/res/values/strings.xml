@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CloneWasap2</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="register">Registrarse</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="name_hint">Nombre completo</string>
+    <string name="type_message">Escribe un mensaje...</string>
+    <string name="chats">Chats</string>
+    <string name="contacts">Contactos</string>
+    <string name="profile">Perfil</string>
+</resources>
